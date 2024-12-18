@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Flowers Project{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/diagonal-stripes.png');
+            background-color: #f8f5f0;
+        }
+
+        header {
+            background: linear-gradient(90deg, #3b3b3b, #1a1a1a);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        nav a {
+            padding: 0.5rem 1rem;
+            border: 2px solid #fff;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #f8f5f0;
+            color: #1a1a1a;
+            border-color: #1a1a1a;
+        }
+
+        footer {
+            background: linear-gradient(90deg, #1a1a1a, #3b3b3b);
+        }
+
+        .btn-animated {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: 2px solid #fff;
+            border-radius: 50px;
+            background-color: transparent;
+            transition: all 0.4s ease;
+        }
+
+        .btn-animated::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            z-index: 0;
+            transition: left 0.4s ease;
+        }
+
+        .btn-animated:hover::before {
+            left: 0;
+        }
+
+        .btn-animated span {
+            position: relative;
+            z-index: 1;
+            color: #1a1a1a;
+        }
+
+        .btn-animated:hover span {
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <header class="text-white p-6">
+        <h1 class="text-4xl font-bold text-center">Flowers Project</h1>
+        <nav class="text-center mt-4">
+            <a href="/flowers/" class="btn-animated"><span>All Flowers</span></a>
+            <a href="/flowers/add/" class="btn-animated ml-2"><span>Add Flower</span></a>
+        </nav>
+    </header>
+    <main class="p-10 max-w-4xl mx-auto bg-white rounded-lg shadow-lg mt-8">
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer class="text-white text-center p-6 mt-10">
+        <p>&copy; 2024 Flowers Project | Crafted with Elegance</p>
+    </footer>
+</body>
+</html>
