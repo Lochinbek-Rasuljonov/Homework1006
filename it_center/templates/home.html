@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asosiy Sahifa</title>
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- MD Bootstrap (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/mdb-ui-kit@5.0.0-beta4/dist/css/mdb.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mdb-ui-kit@5.0.0-beta4/dist/js/mdb.min.js"></script>
+
+    <style>
+        /* Futuristic Background Gradient Animation */
+        @keyframes gradientAnimation {
+            0% {
+                background: linear-gradient(135deg, #00c6ff, #0072ff);
+            }
+
+            25% {
+                background: linear-gradient(135deg, #ff00c6, #ff0072);
+            }
+
+            50% {
+                background: linear-gradient(135deg, #00ff6b, #00d7ff);
+            }
+
+            75% {
+                background: linear-gradient(135deg, #ffb700, #ff0a77);
+            }
+
+            100% {
+                background: linear-gradient(135deg, #00c6ff, #0072ff);
+            }
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            animation: gradientAnimation 15s ease infinite;
+            background-size: 400% 400%;
+        }
+
+        /* Custom button styles */
+        .futuristic-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .futuristic-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .futuristic-btn:focus {
+            outline: none;
+        }
+
+        /* Hero Section Styles */
+        .hero-content {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #fff;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+
+        section h2 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        section p {
+            font-size: 1.25rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MD Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">It Center</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Lessons</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Section with Tailwind CSS -->
+    <section class="hero-bg flex justify-center items-center">
+        <div class="hero-content text-center text-white">
+            <h1 class="hero-title">IT Center ga Xush kelibsiz!</h1>
+            <p class="hero-description">Bizning markazda sizni zamonaviy ta'lim tizimi kutmoqda. O'zgarishlarga tayyor bo'ling!</p>
+            <div class="mt-6">
+                <a href="#about" class="futuristic-btn">Biz Haqimizda</a>
+                <a href="#branches" class="futuristic-btn">Filiallar</a>
+                <a href="{% url 'course_list' %}" class="futuristic-btn">Kurslar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-gray-900 text-white">
+        <div class="container mx-auto text-center">
+            <h2>Biz Haqimizda</h2>
+            <p>It Center - IT sohasida zamonaviy va sifatli ta'limni taqdim etuvchi markazdir.</p>
+        </div>
+    </section>
+
+    <!-- Branches Section -->
+    <section id="branches" class="bg-gray-800 text-white">
+        <div class="container mx-auto text-center">
+            <h2>Filiallar</h2>
+            <p>Bizning filiallarimiz barcha shaharlarda mavjud!</p>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="bg-gray-700 text-white">
+        <div class="container mx-auto text-center">
+            <h2>Kurslar</h2>
+            <p>Bizda dasturlash va boshqa ko'plab kurslar mavjud.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white text-center p-4">
+        <p>&copy; 2024 It Center. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

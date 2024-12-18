@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+{% block title %}Courses{% endblock %}
+{% block content %}
+<h1 class="text-3xl font-bold mb-4">Courses</h1>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {% for course in courses %}
+    <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold">{{ course.title }}</h2>
+        <p>{{ course.description }}</p>
+        <a href="{% url 'lesson_list' course.id %}" class="text-blue-500">View Lessons</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
